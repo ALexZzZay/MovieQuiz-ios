@@ -51,6 +51,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gr3-ce-Ics" secondAttribute="height" multiplier="2:3" id="RPh-Ek-ufG"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHc-1t-xii" userLabel="Question Title Label">
                                         <rect key="frame" x="0.0" y="624.5" width="374" height="99.5"/>
@@ -78,7 +83,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="noButtonCliked:" destination="BYZ-38-t0r" eventType="touchDown" id="0sN-zZ-BhP"/>
+                                                    <action selector="noButtonCliked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wNN-N1-LBa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhH-yU-Hra" userLabel="Yes button">
@@ -95,7 +100,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="yesButtonCliked:" destination="BYZ-38-t0r" eventType="touchDown" id="f5M-b0-v2c"/>
+                                                    <action selector="yesButtonCliked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWj-f7-751"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -120,7 +125,9 @@
                     <connections>
                         <outlet property="counterLabel" destination="wxa-iP-LRW" id="7Gd-At-PdR"/>
                         <outlet property="imageView" destination="gr3-ce-Ics" id="1Mm-hf-igB"/>
+                        <outlet property="noButton" destination="bhg-q0-z54" id="mR0-WW-ODF"/>
                         <outlet property="textLabel" destination="VHc-1t-xii" id="qdo-f7-XSl"/>
+                        <outlet property="yesButton" destination="xhH-yU-Hra" id="Q9K-cg-yt2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
