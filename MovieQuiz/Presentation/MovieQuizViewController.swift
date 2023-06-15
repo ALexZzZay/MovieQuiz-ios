@@ -6,8 +6,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var counterLabel: UILabel!
    
-    @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet private weak var yesButton: UIButton!
+    @IBOutlet private weak var noButton: UIButton!
     
     @IBAction private func noButtonCliked(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex]
@@ -128,7 +128,6 @@ final class MovieQuizViewController: UIViewController {
         
         if isCorrect {
             correctAnswers += 1
-            
         }
 
         imageView.layer.masksToBounds = true // даем разрешение на рисование рамки
@@ -139,7 +138,6 @@ final class MovieQuizViewController: UIViewController {
 
             self.showNextQuestionOrResults()
         }
-        
     }
 
     private func showNextQuestionOrResults() {
