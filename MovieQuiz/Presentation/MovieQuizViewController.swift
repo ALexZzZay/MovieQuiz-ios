@@ -1,9 +1,9 @@
 import UIKit
 
 final class MovieQuizViewController: UIViewController {
-    @IBOutlet private var textLabel: UILabel!
-    @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var counterLabel: UILabel!
+    @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var counterLabel: UILabel!
     
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
@@ -15,7 +15,7 @@ final class MovieQuizViewController: UIViewController {
     private let questionsCount = 10
     
     private var questionFactory: QuestionFactory?
-    private var alertPresenter: AlertPresenter?
+    private var alertPresenter: AlertPresenterProtocol?
     private var statisticService: StatisticService?
     
     // MARK: - Lifecycle
@@ -24,7 +24,7 @@ final class MovieQuizViewController: UIViewController {
         super.viewDidLoad()
         
         questionFactory = QuestionFactoryImpl(delegate: self)
-        alertPresenter = AlertPresenterImpl(viewController: self)
+        alertPresenter = AlertPresenterProtocolImpl(viewController: self)
         statisticService = StatisticServiceImpl()
         
         questionFactory?.requestNextQuestion()
@@ -67,9 +67,6 @@ final class MovieQuizViewController: UIViewController {
         counterLabel.text = step.questionNumber
         imageView.image = step.image
         textLabel.text = step.question
-    }
-    
-    func requestNextQuestion() {
     }
     
     private func show(quiz result: QuizResultsViewModel) {
