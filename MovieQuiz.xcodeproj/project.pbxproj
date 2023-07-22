@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070420462A6701020044DB91 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070420452A6701020044DB91 /* NetworkClient.swift */; };
 		070A0C822A4B450F0033147B /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0C812A4B450F0033147B /* QuestionFactory.swift */; };
 		070A0C852A4B49460033147B /* QuizStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0C842A4B49460033147B /* QuizStepViewModel.swift */; };
 		070A0C872A4B49610033147B /* QuizResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A0C862A4B49610033147B /* QuizResultsViewModel.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070420452A6701020044DB91 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		070A0C812A4B450F0033147B /* QuestionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
 		070A0C842A4B49460033147B /* QuizStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStepViewModel.swift; sourceTree = "<group>"; };
 		070A0C862A4B49610033147B /* QuizResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsViewModel.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				070A0C812A4B450F0033147B /* QuestionFactory.swift */,
 				07DEE2372A51D6AD00DD7D86 /* StatisticsService.swift */,
+				070420452A6701020044DB91 /* NetworkClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				079EFF1A2A55984A00B35CE5 /* AlertPresenterProtocol.swift in Sources */,
 				070A0C822A4B450F0033147B /* QuestionFactory.swift in Sources */,
 				AD77F5742857F8810062FB14 /* Date+Extensions.swift in Sources */,
+				070420462A6701020044DB91 /* NetworkClient.swift in Sources */,
 				AD1ABAB22831907B00B3E448 /* AppDelegate.swift in Sources */,
 				070A0C872A4B49610033147B /* QuizResultsViewModel.swift in Sources */,
 				AD1ABAB42831907B00B3E448 /* SceneDelegate.swift in Sources */,

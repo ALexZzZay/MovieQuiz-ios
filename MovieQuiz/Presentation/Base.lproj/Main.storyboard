@@ -112,6 +112,11 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1" style="medium" id="551-o2-xSW">
+                                <rect key="frame" x="20" y="435" width="374" height="25.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="YP Gray"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
@@ -123,6 +128,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="551-o2-xSW" id="i1e-ug-4LD"/>
                         <outlet property="counterLabel" destination="wxa-iP-LRW" id="7Gd-At-PdR"/>
                         <outlet property="imageView" destination="gr3-ce-Ics" id="1Mm-hf-igB"/>
                         <outlet property="noButton" destination="bhg-q0-z54" id="mR0-WW-ODF"/>
@@ -138,6 +144,9 @@
     <resources>
         <namedColor name="YP Black">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YP Gray">
+            <color red="0.90200001001358032" green="0.9100000262260437" blue="0.92199999094009399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="YP White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

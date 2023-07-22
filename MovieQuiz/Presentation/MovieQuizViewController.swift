@@ -8,6 +8,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
     
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
     private var correctAnswers: Int = 0
     
     private var currentQuestionIndex: Int = 0
@@ -57,8 +59,8 @@ final class MovieQuizViewController: UIViewController {
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
         let questionStep = QuizStepViewModel(
             image: UIImage(named: model.image) ?? UIImage(),
-                                             question: model.text,
-                                             questionNumber: "\(currentQuestionIndex + 1)/\(questionsCount)"
+            question: model.text,
+            questionNumber: "\(currentQuestionIndex + 1)/\(questionsCount)"
         )
         return questionStep
     }
@@ -77,7 +79,7 @@ final class MovieQuizViewController: UIViewController {
         if isCorrect {
             correctAnswers += 1
         }
-
+        
         imageView.layer.masksToBounds = true // даем разрешение на рисование рамки
         imageView.layer.borderWidth = 8 // толщина рамки
         imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
@@ -141,7 +143,33 @@ final class MovieQuizViewController: UIViewController {
         
         return resultMessage
     }
-}
+    
+    private func showLoadingIndicator() {
+        activityIndicator.isHidden = false // loading indicator is not hidden
+        activityIndicator.startAnimating() // turn on the animation
+    }
+    
+    private func hideLoadingIndicator() {
+        activityIndicator.isHidden = true // loading indicator is hidden
+        activityIndicator.stopAnimating() // turn off the animation
+    }
+    
+    private func showNetworkError(message: String) {
+        hideLoadingIndicator() // скрываем индикатор загрузки
+        
+        let model = AlertModel(title: "Ошибка",
+                               message: message,
+                               buttonText: "Попробовать еще раз") { [weak self] in guard let self = self else { return }
+            
+            self.currentQuestionIndex = 0
+            self.correctAnswers = 0
+            
+            self.questionFactory?.requestNextQuestion()
+        }
+        
+        alertPresenter?.show(alertModel: model)
+        }
+    }
 
 // MARK: - Extension
 
